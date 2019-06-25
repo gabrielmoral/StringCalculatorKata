@@ -22,18 +22,13 @@ namespace StringCalculatorKata
             Assert.Equal(expected, result);
         }
 
-        [Fact]
-        public void AcceptNewLineExpressionSeparators()
+        [Theory]
+        [InlineData("4\n4", 8)]
+        [InlineData("4\n4,4", 12)]
+        public void AcceptNewLineExpressionSeparators(string expression,int expected)
         {
-            var result = StringCalculator.Add("4\n4");
-            Assert.Equal(8, result);
-        }
-        
-        [Fact]
-        public void AcceptSeveralExpressionSeparators()
-        {
-            var result = StringCalculator.Add("4\n4,4");
-            Assert.Equal(12, result);
+            var result = StringCalculator.Add(expression);
+            Assert.Equal(expected, result);
         }
     }
 }
