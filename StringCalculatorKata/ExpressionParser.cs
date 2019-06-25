@@ -4,12 +4,14 @@ internal static class ExpressionParser
     {
         const string newLineSeparator = "\n";
         const string commaSeparator = ",";
-            
+
+        var normalisedExpression = expression;
+        
         if (expression.Contains(newLineSeparator))
         {
-            return expression.Split(newLineSeparator);                    
+            normalisedExpression = expression.Replace(newLineSeparator, commaSeparator);                    
         }
 
-        return expression.Split(commaSeparator);
+        return normalisedExpression.Split(commaSeparator);
     }
 }

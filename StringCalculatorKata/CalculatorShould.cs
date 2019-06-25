@@ -23,10 +23,17 @@ namespace StringCalculatorKata
         }
 
         [Fact]
-        public void AcceptDifferentExpressionSeparators()
+        public void AcceptNewLineExpressionSeparators()
         {
             var result = StringCalculator.Add("4\n4");
             Assert.Equal(8, result);
+        }
+        
+        [Fact]
+        public void AcceptSeveralExpressionSeparators()
+        {
+            var result = StringCalculator.Add("4\n4,4");
+            Assert.Equal(12, result);
         }
     }
 }
