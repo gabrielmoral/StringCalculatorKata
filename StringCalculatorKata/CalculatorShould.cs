@@ -37,5 +37,12 @@ namespace StringCalculatorKata
             var result = StringCalculator.Add("//;\n4;4");
             Assert.Equal(8, result);
         }
+        
+        [Fact]
+        public void AcceptCustomSeparatorMoreThanOneCharacter()
+        {
+            var result = StringCalculator.Add("//;w\n4;w4");
+            Assert.Equal(8, result);
+        }
     }
 }
