@@ -9,7 +9,7 @@ namespace StringCalculatorKata
         {
             if (expression == string.Empty) return 0;
 
-            var addends = FindAddends(expression);
+            var addends = ExpressionParser.ParseAddends(expression);
 
             return Sum(addends);            
         }
@@ -17,11 +17,6 @@ namespace StringCalculatorKata
         private static int Sum(string[] addends)
         {
             return addends.Select(int.Parse).Sum();
-        }
-
-        private static string[] FindAddends(string expression)
-        {
-            return expression.Split(',');
         }
     }
 }

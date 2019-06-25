@@ -21,5 +21,12 @@ namespace StringCalculatorKata
             var result = StringCalculator.Add(expression);
             Assert.Equal(expected, result);
         }
+
+        [Fact]
+        public void AcceptDifferentExpressionSeparators()
+        {
+            var result = StringCalculator.Add("4\n4");
+            Assert.Equal(8, result);
+        }
     }
 }
